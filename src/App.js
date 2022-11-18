@@ -10,6 +10,7 @@ const App = () => {
         name: 'minLength',
         value: 8,
         isValid: false,
+        regex: /(?=.{8,})/,
         message: 'Password must be at least 8 characters long'
       },
       {
@@ -17,6 +18,7 @@ const App = () => {
         name: 'hasNumber',
         value: true,
         isValid: false,
+        regex: /\d/,
         message: 'Password must contain at least one number'
       },
       {
@@ -24,6 +26,7 @@ const App = () => {
         name: 'hasSpecialChar',
         value: true,
         isValid: false,
+        regex: /[!@#$%^&*]/,
         message: 'Password must contain at least one special character'
       }
     ]
@@ -33,25 +36,7 @@ const App = () => {
     const { value } = e.target;
     const rules = [...passwordValidation.rules];
     const updatedRules = rules.map(rule => {
-      if (rule.name === 'minLength') {
-        return {
-          ...rule,
-          isValid: value.length >= rule.value
-        };
-      }
-      if (rule.name === 'hasNumber') {
-        return {
-          ...rule,
-          isValid: /\d/.test(value)
-        };
-      }
-      if (rule.name === 'hasSpecialChar') {
-        return {
-          ...rule,
-          isValid: /[^a-zA-Z0-9]/.test(value)
-        };
-      }
-  
+      rule.isValid = rule.regex.test(value);
       return rule;
     });
 
