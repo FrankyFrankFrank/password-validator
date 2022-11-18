@@ -53,7 +53,7 @@ const App = () => {
     <div className='p-4'>
       <label
         for="password"
-        className='block text-gray-700 text-sm font-bold mb-2'
+        className='block text-gray-700 text-sm font-bold mb-2 uppercase tracking-widest'
       >Password</label>
       <input
         id="password"
