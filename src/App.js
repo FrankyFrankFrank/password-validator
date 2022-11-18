@@ -8,7 +8,6 @@ const App = () => {
       {
         id: 1,
         name: 'minLength',
-        value: 8,
         isValid: false,
         regex: /(?=.{8,})/,
         message: 'Password must be at least 8 characters long'
@@ -16,7 +15,6 @@ const App = () => {
       {
         id: 2,
         name: 'hasNumber',
-        value: true,
         isValid: false,
         regex: /\d/,
         message: 'Password must contain at least one number'
@@ -24,7 +22,6 @@ const App = () => {
       {
         id: 3,
         name: 'hasSpecialChar',
-        value: true,
         isValid: false,
         regex: /[!@#$%^&*]/,
         message: 'Password must contain at least one special character'
