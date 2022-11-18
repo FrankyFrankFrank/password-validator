@@ -7,21 +7,18 @@ const App = () => {
     rules: [
       {
         id: 1,
-        name: 'minLength',
         isValid: false,
         regex: /(?=.{8,})/,
         message: 'Password must be at least 8 characters long'
       },
       {
         id: 2,
-        name: 'hasNumber',
         isValid: false,
         regex: /\d/,
         message: 'Password must contain at least one number'
       },
       {
         id: 3,
-        name: 'hasSpecialChar',
         isValid: false,
         regex: /[!@#$%^&*]/,
         message: 'Password must contain at least one special character'
@@ -60,7 +57,9 @@ const App = () => {
       />
       <ul>
         {getAllFailingRules().map(rule => (
-          <li>{rule.message}</li>
+          <li
+            key={rule.id}
+          >{rule.message}</li>
         ))}
       </ul>
     </div>
