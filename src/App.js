@@ -47,10 +47,13 @@ const App = () => {
 
   return (
     <div className='p-4'>
-      <label for="password">Password</label>
+      <label
+        for="password"
+        className='block text-gray-700 text-sm font-bold mb-2'
+      >Password</label>
       <input
         id="password"
-        className={'border'}
+        className='shadow appearance-none border rounded w-full py-2 px-3 mb-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
         type={'password'}
         value={passwordValidation.password}
         onChange={handlePasswordChange}
@@ -59,6 +62,7 @@ const App = () => {
         {getAllFailingRules().map(rule => (
           <li
             key={rule.id}
+            className='text-red-500 text-xs italic'
           >{rule.message}</li>
         ))}
       </ul>
