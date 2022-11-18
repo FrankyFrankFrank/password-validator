@@ -567,8 +567,16 @@ video {
   margin-bottom: 1rem;
 }
 
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
 .block {
   display: block;
+}
+
+.flex {
+  display: flex;
 }
 
 .w-full {
@@ -578,6 +586,10 @@ video {
 .appearance-none {
   -webkit-appearance: none;
           appearance: none;
+}
+
+.items-center {
+  align-items: center;
 }
 
 .rounded {
@@ -632,6 +644,11 @@ video {
 .text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
+.text-green-500 {
+  --tw-text-opacity: 1;
+  color: rgb(34 197 94 / var(--tw-text-opacity));
 }
 
 .shadow {

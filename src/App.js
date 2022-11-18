@@ -41,8 +41,12 @@ const App = () => {
     });
   };
 
-  const getAllFailingRules = () => {
-    return passwordValidation.rules.filter(rule => !rule.isValid);
+  const renderIcon = rule => {
+    return rule.isValid ? (
+      <i className="fas fa-check-circle mr-2" />
+    ) : (
+      <i className='fas fa-times-circle mr-2' />
+    );
   };
 
   return (
@@ -59,11 +63,14 @@ const App = () => {
         onChange={handlePasswordChange}
       />
       <ul>
-        {getAllFailingRules().map(rule => (
+        {passwordValidation.rules.map(rule => (
           <li
             key={rule.id}
-            className='text-red-500 text-xs italic'
-          >{rule.message}</li>
+            className={`flex items-center mb-2 ${rule.isValid ? 'text-green-500' : 'text-red-500'}`}
+          >
+            { renderIcon(rule) }
+            {rule.message}
+          </li>
         ))}
       </ul>
     </div>
